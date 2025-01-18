@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="text-xl font-bold text-gray-800">My Portfolio</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
+          <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
+          <a href="#skills" class="text-gray-600 hover:text-gray-900">Skills</a>
+          <a href="#projects" class="text-gray-600 hover:text-gray-900">Projects</a>
+          <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+        </div>
+        <button class="md:hidden" onclick="toggleMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu - updated to include Skills -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#home" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Home</a>
+        <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-gray-900">About</a>
+        <a href="#skills" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Skills</a>
+        <a href="#projects" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Projects</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="pt-20 md:pt-40 pb-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
+          Hi, I'm <span class="text-blue-600">Raghav Agrawal</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">Programmer | Developer</p>
+        <div class="flex justify-center space-x-8 mb-8">
+          <a href="https://www.linkedin.com/in/raghav-agrawal-4431932ab/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="https://github.com/Raaaghavagrawal/Raaaghavagrawal" class="text-gray-600 hover:text-blue-600 transition-colors duration-300" target="_blank">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://x.com/Raghavvv23" class="text-gray-600 hover:text-blue-600 transition-colors duration-300" target="_blank">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+            </svg>
+          </a>
+        </div>
+        <a href="CV Raghav agrawal.pdf" download="Raghav_CV.pdf"
+          class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 inline-block">
+          Download CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section - removed skills part -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+      <div class="md:flex items-center space-y-8 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+          <img src="Profile Photo Raghav.jpeg" alt="Profile" class="rounded-lg shadow-lg mx-auto">
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-gray-600 leading-relaxed">
+            I'm a passionate developer with experience in building web applications.
+            I specialize in JavaScript, React, and Node.js. With a strong foundation
+            in both frontend and backend development, I strive to create elegant
+            solutions that solve real-world problems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Skills & Expertise</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Frontend Development -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+          <h3 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+            <i class="fas fa-code mr-2"></i> Frontend Development
+          </h3>
+          <div class="space-y-4">
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="htmlcss.png" alt="" width="50px" height="50px">
+              <i class="fab fa-html5 text-orange-600 mr-3"></i>
+
+              <span class="text-gray-700">HTML/CSS</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="tailwind css.jpeg" alt="" width="50px" height="50px">
+              <i class="fas fa-wind text-blue-400 mr-3"></i>
+              <span class="text-gray-700">Tailwind CSS</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="javascript.jpeg" alt="" width="50px" height="50px">
+              <i class="fab fa-js-square text-yellow-500 mr-3"></i>
+              <span class="text-gray-700">JavaScript</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="react.png" alt="" width="50px" height="50px">
+              <i class="fab fa-react text-blue-500 mr-3"></i>
+              <span class="text-gray-700">React.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+          <h3 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+            <i class="fas fa-server mr-2"></i> Backend Development
+          </h3>
+          <div class="space-y-4">
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="node js.png" alt="" width="50px" height="50px">
+              <i class="fab fa-node-js text-green-600 mr-3"></i>
+              <span class="text-gray-700">Node.js</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="python.jpeg" alt="" width="50px" height="50px">
+              <i class="fab fa-python text-blue-400 mr-3"></i>
+              <span class="text-gray-700">Python</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="mysql.png" alt="" width="50px" height="50px">
+              <i class="fas fa-database text-blue-600 mr-3"></i>
+              <span class="text-gray-700">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+          <h3 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+            <i class="fas fa-tools mr-2"></i> Tools & Technologies
+          </h3>
+          <div class="space-y-4">
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="git.png" alt="" width="50px" height="50px">
+              <i class="fab fa-git-alt text-orange-600 mr-3"></i>
+              <span class="text-gray-700">Git</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="github'.jpeg" alt="" width="50px" height="50px">
+              <i class="fab fa-github text-black mr-3"></i>
+              <span class="text-gray-700">GitHub</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="docker.png" alt="" width="50px" height="50px">
+              <i class="fab fa-docker text-blue-500 mr-3"></i>
+              <span class="text-gray-700">Docker</span>
+            </div>
+            <div class="skill-item flex items-center hover:bg-gray-100 p-2 rounded-lg transition">
+              <img src="jenkins2.jpeg" alt="" width="50px" height="50px">
+              <i class="fas fa-cogs text-green-500 mr-3"></i>
+              <span class="text-gray-700">Jenkins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project Card -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="project1.png" alt="Project 1" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">RAPID KEYS</h3>
+            <p class="text-gray-600 mb-4">
+              <b>Overview</b><br>
+              I developed a Typing Speed Test website designed to measure and enhance users' typing speed and accuracy.
+              The website features real-time tests with customizable durations, error highlighting, and progress
+              tracking. Built using HTML5, Tailwind CSS and JavaScript, it offers a responsive design for seamless use
+              across devices. This project improved my skills in real-time user interaction, responsive design, and
+              secure data management. Future enhancements include multiplayer challenges, varied typing modes, and
+              personalized user experiences through authentication.
+            </p>
+            <center>
+            <a class="text-blue-600 font-bold mb-3" href="https://raaaghavagrawal.github.io/Rapid_keys-Typing-speed-test-/" target="_blank">Try Now....</a></center> <br>
+            <div class="flex space-x-2">
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">HTML/CSS</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">JS</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="project2.png" alt="Project 1" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Countryle</h3>
+            <p class="text-gray-600 mb-4">
+              <b>Overview</b><br>
+              I developed a Country Wordle Game that challenges users to guess country names based on limited attempts, similar to the classic Wordle game. The game includes hints such as the continent and population to assist players in their guesses. Built with HTML5, Tailwind CSS, and JavaScript, the game offers a dynamic and interactive user interface.Future improvements include adding a leaderboard, daily challenges, and expanding the game to include city names for increased difficulty. This project showcases my ability to design fun, educational, and interactive web applications.
+            </p>
+            <center>
+            <a class="text-blue-600 font-bold mb-3" href="https://raaaghavagrawal.github.io/Countryle-game/#home" target="_blank">Try Now....</a></center> <br>
+            <div class="flex space-x-2">
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">HTML/CSS</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">JS</span>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat for more projects -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+      <form class="space-y-6">
+        <div>
+          <label class="block text-gray-700 mb-2">Name</label>
+          <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-gray-700 mb-2">Email</label>
+          <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-gray-700 mb-2">Message</label>
+          <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+            rows="4"></textarea>
+        </div>
+        <button class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Add active class to navigation links on scroll
+    window.addEventListener('scroll', function () {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('text-blue-600');
+            if (link.getAttribute('href').substring(1) === section.getAttribute('id')) {
+              link.classList.add('text-blue-600');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
