@@ -42,7 +42,7 @@ window.addEventListener('scroll', function () {
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
             navLinks.forEach(link => {
                 link.classList.remove('text-blue-600');
                 if (link.getAttribute('href').substring(1) === section.getAttribute('id')) {
