@@ -3,24 +3,7 @@ function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenu.classList.toggle('hidden');
 }
-let currentSlide = 0;
-const slider = document.getElementById('projects-slider');
-const totalSlides = 4; // Update this if you add more projects
 
-function showSlide(index) {
-  currentSlide = index;
-  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
-}
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
