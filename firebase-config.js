@@ -7,11 +7,7 @@ const allowedDomains = [
     'localhost',
     '127.0.0.1',
     'contact-me-2abe9.web.app',
-    'contact-me-2abe9.firebaseapp.com',
-    
-    // Add your production domain(s) here
-    // 'yourdomain.com',
-    // 'www.yourdomain.com'
+    'contact-me-2abe9.firebaseapp.com'
 ];
 
 function isAllowedDomain() {
@@ -26,12 +22,12 @@ if (!isAllowedDomain()) {
 }
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBSKAFXVroB5eGB7DCaBlsIwmZlzAuG8fE",
-    authDomain: "contact-me-2abe9.firebaseapp.com",
-    projectId: "contact-me-2abe9",
-    storageBucket: "contact-me-2abe9.appspot.com",
-    messagingSenderId: "339303873161",
-    appId: "1:339303873161:web:ea10cbd86d629e1c66e458"
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY , // Fallback for local development
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID ,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
