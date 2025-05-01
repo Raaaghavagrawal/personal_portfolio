@@ -7,7 +7,8 @@ const allowedDomains = [
     'localhost',
     '127.0.0.1',
     'contact-me-2abe9.web.app',
-    'contact-me-2abe9.firebaseapp.com'
+    'contact-me-2abe9.firebaseapp.com',
+    'portfolio-raaaghavagrawals-projects.vercel.app'
 ];
 
 function isAllowedDomain() {
@@ -22,12 +23,12 @@ if (!isAllowedDomain()) {
 }
 
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY , // Fallback for local development
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID ,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+    apiKey: "AIzaSyDJvk4A_K6bsS0HpvCgpxl0-0WxKLTLdQI",
+    authDomain: "contact-me-2abe9.firebaseapp.com",
+    projectId: "contact-me-2abe9",
+    storageBucket: "contact-me-2abe9.appspot.com",
+    messagingSenderId: "268574464357",
+    appId: "1:268574464357:web:f7c19803e9d8fcdc809f67"
 };
 
 // Initialize Firebase
