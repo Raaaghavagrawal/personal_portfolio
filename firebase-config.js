@@ -22,13 +22,14 @@ if (!isAllowedDomain()) {
     throw new Error('Unauthorized domain');
 }
 
+// Use environment variables instead of hardcoded values
 const firebaseConfig = {
-    apiKey: "AIzaSyDJvk4A_K6bsS0HpvCgpxl0-0WxKLTLdQI",
-    authDomain: "contact-me-2abe9.firebaseapp.com",
-    projectId: "contact-me-2abe9",
-    storageBucket: "contact-me-2abe9.appspot.com",
-    messagingSenderId: "268574464357",
-    appId: "1:268574464357:web:f7c19803e9d8fcdc809f67"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY ,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN ,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID ,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET ,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID ,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID 
 };
 
 // Initialize Firebase
