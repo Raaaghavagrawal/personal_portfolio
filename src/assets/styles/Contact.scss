@@ -1,0 +1,555 @@
+.contact-section {
+  padding: 25px 0;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/bg-dark.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  overflow: visible;
+  font-family: "Manrope", sans-serif !important;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+  }
+}
+
+.contact-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    animation: float 6s ease-in-out infinite;
+    
+    &.shape-1 {
+      width: 25px;
+      height: 25px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    &.shape-2 {
+      width: 35px;
+      height: 35px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    
+    &.shape-3 {
+      width: 20px;
+      height: 20px;
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+    
+    &.shape-4 {
+      width: 30px;
+      height: 30px;
+      top: 10%;
+      right: 30%;
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(180deg);
+  }
+}
+
+.contact_wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #ffffff, #64b5f6, #ffffff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-align: center;
+  font-family: "Manrope", sans-serif !important;
+  
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.contact-subtitle {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 400px;
+  margin: 0 auto;
+  opacity: 0.9;
+  font-weight: 300;
+  text-align: center;
+  font-family: "Manrope", sans-serif !important;
+  
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+}
+
+.contact-divider {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #64b5f6, transparent);
+  margin: 10px auto 0;
+  border-radius: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// Contact Info Card - Enhanced "Get In Touch" Section
+.contact-info-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  height: fit-content;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Manrope", sans-serif !important;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(100, 181, 246, 0.1);
+    border-color: rgba(100, 181, 246, 0.3) !important;
+    
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.card-header {
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  font-family: "Manrope", sans-serif !important;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #64b5f6, transparent);
+    border-radius: 1px;
+  }
+}
+
+.card-title {
+  color: white !important;
+  font-weight: 800 !important;
+  margin-bottom: 8px !important;
+  font-size: 1.3rem !important;
+  text-align: center;
+  background: linear-gradient(45deg, #ffffff, #64b5f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.card-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  text-align: center;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-details {
+  margin-bottom: 20px;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: "Manrope", sans-serif !important;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #64b5f6, #1976d2);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    transform: translateX(5px) scale(1.02);
+    border-color: rgba(100, 181, 246, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    &::before {
+      transform: scaleY(1);
+    }
+    
+    .contact-icon {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
+    }
+  }
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  svg {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.contact-content {
+  flex: 1;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 2px !important;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-value {
+  color: white !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  font-family: "Manrope", sans-serif !important;
+  
+  &.link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #64b5f6, #1976d2);
+      transition: width 0.3s ease;
+    }
+    
+    &:hover {
+      color: #64b5f6 !important;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Contact Form Card
+.contact-form-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 15px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 400px;
+  font-family: "Manrope", sans-serif !important;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+}
+
+.form-header {
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.form-title {
+  color: white !important;
+  font-weight: 700 !important;
+  margin-bottom: 5px !important;
+  font-size: 1.1rem !important;
+  text-align: center;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.form-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.8rem !important;
+  line-height: 1.3 !important;
+  text-align: center;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.contact-form {
+  font-family: "Manrope", sans-serif !important;
+  
+  .form-field {
+    .MuiOutlinedInput-root {
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: all 0.3s ease;
+      font-family: "Manrope", sans-serif !important;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      &.Mui-focused {
+        background: rgba(255, 255, 255, 0.08);
+      }
+    }
+  }
+  
+  .message-field {
+    .MuiOutlinedInput-root {
+      border-radius: 8px;
+    }
+  }
+}
+
+.submit-section {
+  text-align: center;
+  margin-top: 8px;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.submit-button {
+  min-width: 120px !important;
+  height: 32px !important;
+  border-radius: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+  box-shadow: 0 3px 10px rgba(100, 181, 246, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-family: "Manrope", sans-serif !important;
+  
+  &:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 5px 15px rgba(100, 181, 246, 0.3) !important;
+  }
+  
+  &:disabled {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+// Notification Alerts
+.notification-alert {
+  border-radius: 6px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) !important;
+  font-family: "Manrope", sans-serif !important;
+  
+  .MuiAlert-message {
+    padding: 3px 0;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1200px) {
+  .contact_wrapper {
+    padding: 0 8px;
+  }
+  
+  .contact-info-card,
+  .contact-form-card {
+    padding: 12px !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .contact-section {
+    padding: 20px 0;
+  }
+  
+  .contact-title {
+    font-size: 1.6rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .card-title,
+  .form-title {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 15px 0;
+  }
+  
+  .contact-title {
+    font-size: 1.4rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .contact-info-card,
+  .contact-form-card {
+    padding: 10px !important;
+    border-radius: 8px !important;
+  }
+  
+  .card-title,
+  .form-title {
+    font-size: 0.9rem !important;
+  }
+  
+  .contact-item {
+    padding: 4px;
+  }
+  
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+}

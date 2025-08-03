@@ -1,0 +1,241 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+    text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    
+    .projects-title {
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #64b5f6, #1976d2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+    }
+    
+    .projects-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+  
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2rem;
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        border-color: rgba(100, 181, 246, 0.3) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+    }
+}
+
+.project-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    .project-card:hover & {
+        opacity: 1;
+    }
+}
+
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    
+    .project-card:hover & {
+        transform: translateY(0);
+    }
+}
+
+.project-action-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease !important;
+    
+    &:hover {
+        background: rgba(100, 181, 246, 0.2) !important;
+        border-color: #64b5f6 !important;
+        transform: scale(1.1);
+    }
+}
+
+.project-content {
+    padding: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-header {
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+    color: white !important;
+    line-height: 1.3 !important;
+}
+
+.project-description {
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+    flex-grow: 1;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tech-chip {
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+// Light mode styles
+.light-mode {
+    .project-card {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        
+        &:hover {
+            border-color: rgba(25, 118, 210, 0.3) !important;
+        }
+    }
+    
+    .project-title {
+        color: #0d1116 !important;
+    }
+    
+    .project-description {
+        color: rgba(13, 17, 22, 0.8) !important;
+    }
+    
+    .tech-chip {
+        border-color: rgba(0, 0, 0, 0.2) !important;
+        color: rgba(0, 0, 0, 0.8) !important;
+        
+        &:hover {
+            border-color: #1976d2 !important;
+            color: #1976d2 !important;
+        }
+    }
+    
+    .project-action-btn {
+        background: rgba(0, 0, 0, 0.1) !important;
+        color: #0d1116 !important;
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        
+        &:hover {
+            background: rgba(25, 118, 210, 0.2) !important;
+            border-color: #1976d2 !important;
+        }
+    }
+}
+
+// Responsive design
+@media screen and (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        padding: 5% 5%;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1rem;
+    }
+    
+    .projects-header {
+        margin-bottom: 2rem;
+        
+        .projects-title {
+            font-size: 2rem !important;
+        }
+        
+        .projects-subtitle {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-container {
+        padding: 3% 3%;
+    }
+    
+    .project-content {
+        padding: 1rem !important;
+    }
+    
+    .project-actions {
+        gap: 0.5rem;
+    }
+    
+    .project-action-btn {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}

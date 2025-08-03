@@ -1,0 +1,47 @@
+footer {
+  text-align: center;
+  padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Manrope", sans-serif !important;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 8px;
+    
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #64b5f6;
+      }
+      
+      svg {
+        width: 16px !important;
+        height: 16px !important;
+      }
+    }
+  }
+
+  p {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-family: "Manrope", sans-serif !important;
+  }
+}
