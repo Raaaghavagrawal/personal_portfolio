@@ -54,8 +54,8 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Standalone SMTP Implementation
-      const response = await fetch('http://localhost:3001/send-email', {
+      // Vercel Serverless Function Implementation
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
