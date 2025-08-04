@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Card, CardContent, CardMedia, Typography, Chip, IconButton, Tooltip } from '@mui/material';
-import { GitHub, Launch, Visibility } from '@mui/icons-material';
+import { GitHub, Launch } from '@mui/icons-material';
 import mock06 from '../assets/images/mock06.png';
 import mock07 from '../assets/images/mock07.png';
 import mock08 from '../assets/images/mock08.png';
