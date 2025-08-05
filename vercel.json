@@ -1,42 +1,32 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "source": "/static/(.*)",
+      "destination": "/static/$1"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
+      "source": "/favicon.ico",
+      "destination": "/favicon.ico"
     },
     {
-      "src": "/manifest.json",
-      "dest": "/manifest.json"
+      "source": "/manifest.json",
+      "destination": "/manifest.json"
     },
     {
-      "src": "/letter-r.png",
-      "dest": "/letter-r.png"
+      "source": "/letter-r.png",
+      "destination": "/letter-r.png"
     },
     {
-      "src": "/profileimg.png",
-      "dest": "/profileimg.png"
+      "source": "/profileimg.png",
+      "destination": "/profileimg.png"
     },
     {
-      "src": "/Resume_RaghavAgrawal.pdf",
-      "dest": "/Resume_RaghavAgrawal.pdf"
+      "source": "/Resume_RaghavAgrawal.pdf",
+      "destination": "/Resume_RaghavAgrawal.pdf"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
