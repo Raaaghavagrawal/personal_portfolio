@@ -36,18 +36,8 @@ export default async function handler(req, res) {
   }
 
   // Check environment variables
-  const emailUser = process.env.EMAIL_USER;
-  const emailPass = process.env.EMAIL_PASS;
-
-  if (!emailUser || !emailPass) {
-    console.error('Missing environment variables:', { 
-      hasEmailUser: !!emailUser, 
-      hasEmailPass: !!emailPass 
-    });
-    return res.status(500).json({
-      error: 'Email configuration not set up properly'
-    });
-  }
+  const emailUser = process.env.EMAIL_USER || 'agrawalraghav747@gmail.com';
+  const emailPass = process.env.EMAIL_PASS || 'lewa gded mdhq wfpc';
 
   try {
     console.log('Attempting to send email from:', emailUser);

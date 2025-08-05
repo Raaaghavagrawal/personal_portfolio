@@ -45,7 +45,7 @@ function Contact() {
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       setShowError(true);
       return;
@@ -204,26 +204,26 @@ function Contact() {
                     </Typography>
                   </Box>
                   
-                  <Box
-                    ref={form}
-                    component="form"
-                    noValidate
-                    autoComplete="off"
-                    className='contact-form'
+          <Box
+            ref={form}
+            component="form"
+            noValidate
+            autoComplete="off"
+            className='contact-form'
                     onSubmit={sendEmail}
-                  >
+          >
                     <Grid container spacing={3} sx={{ mb: 3 }}>
                       <Grid item xs={12} sm={6}>
-                        <TextField
-                          required
+              <TextField
+                required
                           fullWidth
                           name="name"
-                          label="Your Name"
+                label="Your Name"
                           placeholder="What should I call you?"
-                          value={name}
+                value={name}
                           onChange={(e) => setName(e.target.value)}
-                          error={nameError}
-                          helperText={nameError ? "Please enter your name" : ""}
+                error={nameError}
+                helperText={nameError ? "Please enter your name" : ""}
                           className="form-field"
                           sx={{
                             '& .MuiOutlinedInput-root': {
@@ -241,13 +241,13 @@ function Contact() {
                         />
                       </Grid>
                       <Grid item xs={12} sm={6}>
-                        <TextField
-                          required
+              <TextField
+                required
                           fullWidth
                           name="email"
                           label="Email Address"
                           placeholder="your.email@example.com"
-                          value={email}
+                value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           error={emailError}
                           helperText={emailError ? "Please enter a valid email address" : ""}
@@ -269,15 +269,15 @@ function Contact() {
                       </Grid>
                     </Grid>
                     
-                    <TextField
-                      required
+            <TextField
+              required
                       fullWidth
                       name="message"
                       label="Your Message"
                       placeholder="Share your thoughts, project details, or just say hello..."
-                      multiline
+              multiline
                       rows={8}
-                      value={message}
+              value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       error={messageError}
                       helperText={messageError ? "Please enter your message" : ""}
@@ -331,8 +331,8 @@ function Contact() {
                         }}
                       >
                         {isSubmitting ? 'Sending...' : 'Send'}
-                      </Button>
-                    </Box>
+            </Button>
+          </Box>
                   </Box>
                 </Paper>
               </Zoom>
