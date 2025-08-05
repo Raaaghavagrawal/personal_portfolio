@@ -54,8 +54,11 @@ function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Vercel Serverless Function Implementation
-      const response = await fetch('/api/send-email', {
+      // Use local server in development, Vercel function in production
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      const apiUrl = isDevelopment ? 'http://localhost:3001/send-email' : '/api/send-email';
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
