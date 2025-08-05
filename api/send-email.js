@@ -20,6 +20,7 @@ export default async function handler(req, res) {
 
   // Validate input
   if (!name || !email || !message) {
+    console.error('Missing required fields:', { name: !!name, email: !!email, message: !!message });
     return res.status(400).json({
       error: 'Missing required fields: name, email, message'
     });
@@ -28,25 +29,46 @@ export default async function handler(req, res) {
   // Email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
+    console.error('Invalid email format:', email);
     return res.status(400).json({
       error: 'Invalid email format'
     });
   }
 
+  // Check environment variables
+  const emailUser = process.env.EMAIL_USER;
+  const emailPass = process.env.EMAIL_PASS;
+
+  if (!emailUser || !emailPass) {
+    console.error('Missing environment variables:', { 
+      hasEmailUser: !!emailUser, 
+      hasEmailPass: !!emailPass 
+    });
+    return res.status(500).json({
+      error: 'Email configuration not set up properly'
+    });
+  }
+
   try {
+    console.log('Attempting to send email from:', emailUser);
+    
     // Create transporter
     const transporter = nodemailer.createTransporter({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER || 'agrawalraghav747@gmail.com',
-        pass: process.env.EMAIL_PASS || 'lewa gded mdhq wfpc'
+        user: emailUser,
+        pass: emailPass
       }
     });
 
+    // Verify transporter configuration
+    await transporter.verify();
+    console.log('Transporter verified successfully');
+
     // Email content
     const mailOptions = {
-      from: process.env.EMAIL_USER || 'agrawalraghav747@gmail.com',
-      to: process.env.EMAIL_USER || 'agrawalraghav747@gmail.com',
+      from: emailUser,
+      to: emailUser,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -99,6 +121,11 @@ Time: ${new Date().toLocaleString()}
 
   } catch (error) {
     console.error('Error sending email:', error);
+    console.error('Error details:', {
+      message: error.message,
+      code: error.code,
+      command: error.command
+    });
 
     res.status(500).json({
       error: 'Failed to send email',
